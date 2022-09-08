@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # 05 Third-Party APIs: Work Day Scheduler
 
 ## Your Task
@@ -97,3 +98,6 @@ You are required to submit the following for review:
 
 - - -
 © 2022 Trilogy Education Services, LLC, a 2U, Inc. brand. Confidential and Proprietary. All Rights Reserved.
+=======
+# workday-calendar
+>>>>>>> 42c50941929e7c2864a69eeab6887e68cc67c5dc

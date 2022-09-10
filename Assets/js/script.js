@@ -1,4 +1,4 @@
-// format date and time in jumbotron
+// format date and time in header
 var date = moment().format("LLLL");
 $('#currentDay').text(date);
 
@@ -29,4 +29,29 @@ $(document).ready(function() {
         
         
     });
+        var currentHour = moment().hour();
+    // get items from local storage and display in correct timeblocks
+    for (var i = 9; i <= 17; i++) {
+        if (i < 12) {
+            var key = i + "am";
+        } else if(i == 12){
+            var key = i + "pm";
+        }
+         else {
+            var key = (i - 12) + "pm";
+        }
+        
+        // apply past, present, future classes according to time displayed in header
+        if (i < currentHour) {
+            $("#"+key).addClass("past") 
+        } else if (i == currentHour) {
+            $("#"+key).addClass("present") 
+        } else {
+            $("#"+key).addClass("future") 
+        }
+        var show = localStorage.getItem(key) 
+        console.log(show);
+        $("#" + key).val(show);
+    };
+    
 });

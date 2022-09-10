@@ -5,8 +5,7 @@ $('#currentDay').text(date);
 // get input from textarea
 // save input to local storage as key(id), value(input) pair
 $(document).ready(function() {
-    $(".saveBtn").click(function(event) {   
-        console.log("Start Event");
+    $(".saveBtn").click(function(event) {  
 
         // Get the element that received the event
         var targ = $( event.target );
@@ -23,7 +22,6 @@ $(document).ready(function() {
 
         var key = $( targ ).parent().children(".description").attr("id");
 
-        console.log(`key ${key}, value ${txt}`);
         localStorage.setItem(key, txt);
 
         
@@ -40,7 +38,7 @@ $(document).ready(function() {
          else {
             var key = (i - 12) + "pm";
         }
-        
+
         // apply past, present, future classes according to time displayed in header
         if (i < currentHour) {
             $("#"+key).addClass("past") 
@@ -50,7 +48,6 @@ $(document).ready(function() {
             $("#"+key).addClass("future") 
         }
         var show = localStorage.getItem(key) 
-        console.log(show);
         $("#" + key).val(show);
     };
     
